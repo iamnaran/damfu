@@ -2,7 +2,7 @@ package com.delphiclab.damfu.data.entity
 
 import androidx.annotation.IdRes
 
-data class EmojiMeta(
+data class DamfuEmojiMeta(
     val id: Int? = null,
     val name: String,
     @IdRes

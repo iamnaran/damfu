@@ -4,12 +4,12 @@ appcompat = "1.6.1"
 core-ktx = "1.12.0"
 espresso-core = "3.5.1"
 junit = "4.13.2"
-timber = "5.0.1"
 room = "2.6.1"
 android-app-gradle-plugin = "8.2.1"
 kotlin = "1.9.0"
 compose-bom = "2024.03.00"
 kotlinxSerializationJson = "1.6.2"
+viewmodel-compose = "2.7.0"
 
 [libraries]
 androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso-core" }
@@ -22,7 +22,7 @@ compose-ui-core = { group = "androidx.compose.ui", name = "ui" }
 compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
-
+viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "viewmodel-compose" }
 
 core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
 
@@ -30,9 +30,6 @@ junit-junit = { module = "junit:junit", version.ref = "junit" }
 room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
-
-timber-log = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
-
 
 [plugins]
 androidKotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

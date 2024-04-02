@@ -44,7 +44,8 @@ dependencies {
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
     implementation(libs.room.compiler)
-    implementation(libs.timber.log)
+
+    implementation(libs.viewmodel.compose)
 
     implementation(libs.kotlinx.serialization.json)
 
