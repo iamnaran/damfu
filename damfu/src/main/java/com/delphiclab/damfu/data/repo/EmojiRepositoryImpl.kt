@@ -1,10 +1,10 @@
 package com.delphiclab.damfu.data.repo
 
-import com.delphiclab.damfu.data.entity.DamfuEmojiMeta
+import com.delphiclab.damfu.data.entity.DamfuEmojiEntity
 import kotlinx.coroutines.flow.Flow
 
 interface EmojiRepositoryImpl {
 
-    suspend fun getAllEmoji(): Flow<DamfuEmojiMeta>
+    suspend fun getAllEmoji(): Flow<DamfuEmojiEntity>
 
 }

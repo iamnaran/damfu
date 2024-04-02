@@ -2,10 +2,7 @@ package com.delphiclab.damfu.data
 
 import android.content.Context
 import androidx.room.Room
-import com.delphiclab.damfu.data.core.AppDatabase
 import com.delphiclab.damfu.data.dao.EmojiDao
-import com.delphiclab.damfu.data.entity.EmojiModel
-import kotlinx.coroutines.flow.Flow
 
 class DatabaseManager private constructor(private val appDatabase: AppDatabase) {
 

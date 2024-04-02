@@ -1,4 +1,4 @@
-package com.delphiclab.damfu.data.core
+package com.delphiclab.damfu.data
 
 import androidx.room.TypeConverter
 import kotlinx.serialization.encodeToString

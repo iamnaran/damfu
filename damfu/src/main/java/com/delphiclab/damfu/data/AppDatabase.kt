@@ -1,4 +1,4 @@
-package com.delphiclab.damfu.data.core
+package com.delphiclab.damfu.data
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

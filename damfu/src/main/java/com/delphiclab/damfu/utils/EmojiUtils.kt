@@ -3,7 +3,6 @@ package com.delphiclab.damfu.utils
 import android.content.Context
 import com.delphiclab.damfu.R
 import com.delphiclab.damfu.data.entity.EmojiModel
-import kotlinx.serialization.json.Json
 import java.io.IOException
 
 class EmojiUtils {
@@ -13,7 +12,7 @@ class EmojiUtils {
             val emojiList = mutableListOf<EmojiModel>()
             try {
                 val jsonString = loadJSONFromAsset(context)
-                val emojiArray = Json.decodeFromString<List<EmojiModel>>(jsonString)
+                val emojiArray = JsonUtils.decodeJsonString<List<EmojiModel>>(jsonString)
                 emojiList.addAll(emojiArray)
             } catch (e: IOException) {
                 e.printStackTrace()
