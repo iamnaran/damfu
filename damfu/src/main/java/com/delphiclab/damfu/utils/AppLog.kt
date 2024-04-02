@@ -7,7 +7,7 @@ class AppLog private constructor() {
     companion object {
 
 
-        fun showDebug(tag: Int, message: String) {
+        fun showDebug(tag: String, message: String) {
             Log.e(tag,"$--->$message")
         }
 
