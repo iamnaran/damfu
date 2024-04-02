@@ -7,7 +7,7 @@ import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
-import com.delphiclab.damfu.ui.dialog.container.DamfuEmojiContainer
+import com.delphiclab.damfu.ui.dialog.container.DamfuContainer
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -22,7 +22,7 @@ fun DamfuEmojiPicker(
         sheetState = modalBottomSheetState,
         dragHandle = { BottomSheetDefaults.DragHandle() },
     ) {
-        DamfuEmojiContainer()
+        DamfuContainer()
     }
 }
 

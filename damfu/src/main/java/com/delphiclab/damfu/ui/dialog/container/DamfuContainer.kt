@@ -13,10 +13,9 @@ import com.delphiclab.damfu.utils.AppLog
 import com.delphiclab.damfu.utils.EmojiUtils
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import kotlinx.serialization.json.Json
 
 @Composable
-fun DamfuEmojiContainer() {
+fun DamfuContainer() {
 
     val context = LocalContext.current
     val viewModel: DamfuViewModel = viewModel()
