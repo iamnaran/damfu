@@ -1,6 +1,13 @@
 package com.delphiclab.damfu.core
 
 class DamfuConfig private constructor(builder: Builder) {
+
+    // emoji size
+    // show favourites list
+    // favourites emoji count
+    //
+
+
     var showPicker: Boolean = true
         private set
 

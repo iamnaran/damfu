@@ -12,7 +12,8 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.delphiclab.damfu.ui.components.EmojiCategoryList
+import com.delphiclab.damfu.ui.sticky.EmojiHStickyList
+import com.delphiclab.damfu.ui.sticky.EmojiMapCategoryList
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -22,11 +23,13 @@ fun DamfuEmojiPicker(
 ) {
     val damfuViewModel: DamfuViewModel = viewModel()
     val emojisList by damfuViewModel.emojisState.collectAsState(emptyList())
+    val emojisMapList by damfuViewModel.emojisMapState.collectAsState(emptyMap())
 
     val modalBottomSheetState = rememberModalBottomSheetState()
 
     LaunchedEffect(key1 = Unit) {
-        damfuViewModel.fetchEmoji(context)
+//        damfuViewModel.fetchEmoji(context)
+        damfuViewModel.fetchMapEmojis(context)
     }
 
     ModalBottomSheet(
@@ -36,6 +39,7 @@ fun DamfuEmojiPicker(
         dragHandle = { BottomSheetDefaults.DragHandle() },
     ) {
 
-        EmojiCategoryList(emojisList)
+        EmojiHStickyList(emojisMapList)
     }
 }
+
