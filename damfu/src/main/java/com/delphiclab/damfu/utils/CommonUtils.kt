@@ -2,7 +2,7 @@ package com.delphiclab.damfu.utils
 
 import android.content.Context
 import com.delphiclab.damfu.R
-import com.delphiclab.damfu.data.entity.EmojiModel
+import com.delphiclab.damfu.data.dto.EmojiModel
 import kotlinx.serialization.json.Json
 import java.io.IOException
 import java.io.InputStream

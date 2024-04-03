@@ -12,7 +12,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.delphiclab.damfu.ui.components.EmojiList
+import com.delphiclab.damfu.ui.components.EmojiCategoryList
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -30,12 +30,12 @@ fun DamfuEmojiPicker(
     }
 
     ModalBottomSheet(
-        shape = RoundedCornerShape(topStart = 30.dp, topEnd = 30.dp),
+        shape = RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp),
         onDismissRequest = { onDismiss() },
         sheetState = modalBottomSheetState,
         dragHandle = { BottomSheetDefaults.DragHandle() },
     ) {
 
-        EmojiList(emojisList)
+        EmojiCategoryList(emojisList)
     }
 }

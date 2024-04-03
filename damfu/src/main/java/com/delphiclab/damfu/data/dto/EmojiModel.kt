@@ -1,4 +1,4 @@
-package com.delphiclab.damfu.data.entity
+package com.delphiclab.damfu.data.dto
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

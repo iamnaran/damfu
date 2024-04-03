@@ -1,7 +1,7 @@
 package com.delphiclab.damfu.utils
 
 import com.delphiclab.damfu.data.entity.DamfuEmojiEntity
-import com.delphiclab.damfu.data.entity.EmojiModel
+import com.delphiclab.damfu.data.dto.EmojiModel
 
 object EmojiMapper {
     fun mapToEntity(emojiModel: EmojiModel): DamfuEmojiEntity {
