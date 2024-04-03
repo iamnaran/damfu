@@ -14,5 +14,7 @@ interface  EmojiDao {
     fun getAllEmoji(): Flow<DamfuEmojiEntity>
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAllEmoji(emojis: List<DamfuEmojiEntity>)
+    @Query("SELECT * FROM emojis")
+    fun getAllEmojisFlow(): Flow<List<DamfuEmojiEntity>>
 
 }

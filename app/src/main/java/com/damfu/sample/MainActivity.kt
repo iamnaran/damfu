@@ -62,8 +62,7 @@ fun Greeting(name: String, context: Context) {
 
         DamfuEmojiPicker(
             onDismiss = {
-
-
+                showEmojiModalSheet = false
             }, context = context
         )
     }

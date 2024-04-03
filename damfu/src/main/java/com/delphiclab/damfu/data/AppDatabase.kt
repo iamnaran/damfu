@@ -6,7 +6,7 @@ import androidx.room.TypeConverters
 import com.delphiclab.damfu.data.dao.EmojiDao
 import com.delphiclab.damfu.data.entity.DamfuEmojiEntity
 
-@Database(entities = [DamfuEmojiEntity::class], version = 1, exportSchema = false)
+@Database(entities = [DamfuEmojiEntity::class], version = 2, exportSchema = false)
 @TypeConverters(AppTypeConvertor::class)
 abstract class AppDatabase : RoomDatabase() {
 

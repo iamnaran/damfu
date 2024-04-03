@@ -12,6 +12,8 @@ data class DamfuEmojiEntity(
     val unicode: String,
     val score: Int,
     val categoryId: Int,
+    val categoryName: String,
     val subCategoryId: Int,
+    val subCategoryName: String,
     val keywords: List<String>
 )

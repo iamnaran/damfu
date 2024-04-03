@@ -8,18 +8,11 @@ import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.delphiclab.damfu.data.entity.EmojiModel
 import com.delphiclab.damfu.ui.components.EmojiList
-import com.delphiclab.damfu.utils.AppLog
-import com.delphiclab.damfu.utils.EmojiUtils
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -27,18 +20,13 @@ fun DamfuEmojiPicker(
     onDismiss: () -> Unit,
     context: Context,
 ) {
-    var damfuViewModel: DamfuViewModel = viewModel()
-    var emojiList by remember { mutableStateOf<List<EmojiModel>>(emptyList()) }
+    val damfuViewModel: DamfuViewModel = viewModel()
+    val emojisList by damfuViewModel.emojisState.collectAsState(emptyList())
+
     val modalBottomSheetState = rememberModalBottomSheetState()
 
-    LaunchedEffect(Unit) {
-        val loadedEmojiList = withContext(Dispatchers.IO) {
-            EmojiUtils.loadEmojiData(context)
-        }
-        emojiList = loadedEmojiList
-        damfuViewModel.insertAllEmoji(context,emojiList)
-        AppLog.showLog(emojiList.size.toString())
-
+    LaunchedEffect(key1 = Unit) {
+        damfuViewModel.fetchEmoji(context)
     }
 
     ModalBottomSheet(
@@ -48,6 +36,6 @@ fun DamfuEmojiPicker(
         dragHandle = { BottomSheetDefaults.DragHandle() },
     ) {
 
-        EmojiList()
+        EmojiList(emojisList)
     }
 }

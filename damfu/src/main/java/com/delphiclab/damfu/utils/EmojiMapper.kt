@@ -12,7 +12,9 @@ object EmojiMapper {
             unicode = emojiModel.unicode,
             score = emojiModel.score,
             categoryId = emojiModel.category.id,
+            categoryName = emojiModel.category.name,
             subCategoryId = emojiModel.subCategory.id,
+            subCategoryName = emojiModel.subCategory.name,
             keywords = emojiModel.keywords
         )
     }
