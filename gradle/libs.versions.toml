@@ -12,6 +12,7 @@ compose-bom = "2024.02.02"
 viewmodel-compose = "2.7.0"
 compose-activity = "1.8.2"
 kotlinx-serialization-plugin = "1.6.0"
+ksp-plugin = "1.9.0-1.0.13"
 
 [libraries]
 androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso-core" }
@@ -39,3 +40,4 @@ androidKotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 androidLibrary = { id = "com.android.library", version.ref = "android-app-gradle-plugin" }
 androidApplication = { id = "com.android.application", version.ref = "android-app-gradle-plugin" }
 kotlinxSerializationJson = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinx-serialization-plugin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp-plugin" }

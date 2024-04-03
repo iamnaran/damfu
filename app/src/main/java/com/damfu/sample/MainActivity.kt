@@ -4,6 +4,8 @@ import android.content.Context
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Button
@@ -33,8 +35,12 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android",context)
+                    Column(modifier = Modifier
+                        .fillMaxHeight()
+                        .fillMaxWidth()) {
 
+                        Greeting("Android", context)
+                    }
                 }
             }
         }
@@ -54,9 +60,12 @@ fun Greeting(name: String, context: Context) {
 
     if (showEmojiModalSheet) {
 
-        DamfuEmojiPicker(onDismiss = {
+        DamfuEmojiPicker(
+            onDismiss = {
 
-        }, context = context)
+
+            }, context = context
+        )
     }
 
 }
