@@ -1,15 +1,12 @@
 package com.delphiclab.damfu.ui.sticky
 
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
-import androidx.compose.foundation.layout.FlowColumn
-import androidx.compose.foundation.layout.FlowRow
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -20,31 +17,42 @@ import com.delphiclab.damfu.data.entity.DamfuEmojiEntity
 @Composable
 fun EmojiHStickyList(emojiMapList: Map<String, List<DamfuEmojiEntity>>) {
 
-    LazyRow(
-        modifier = Modifier
-            .fillMaxSize()
-            .fillMaxWidth()
-    ) {
+    LazyRow() {
         emojiMapList.map { (category, emojis) ->
             stickyHeader {
                 Text(text = category)
             }
 
             item {
-                FlowColumn(
-                    modifier = Modifier.padding(20.dp),
-                    verticalArrangement = Arrangement.SpaceEvenly,
-                    maxItemsInEachColumn = 8
-
+                LazyHorizontalGrid(
+                    rows = GridCells.Fixed(5),
+                    modifier = Modifier.width(400.dp)
                 ) {
-                    emojis.map { emoji ->
+                    items(emojis.size) { index ->
                         Text(
-                            text = emoji.emoji
+                            text = emojis[index].emoji,
+                            modifier = Modifier.padding(5.dp)
                         )
                     }
-
                 }
+
             }
+
+//            item {
+//                FlowColumn(
+//                    modifier = Modifier.padding(20.dp),
+//                    verticalArrangement = Arrangement.SpaceEvenly,
+//                    maxItemsInEachColumn = 5
+//
+//                ) {
+//                    emojis.map { emoji ->
+//                        Text(
+//                            text = emoji.emoji
+//                        )
+//                    }
+//
+//                }
+//            }
 
         }
 

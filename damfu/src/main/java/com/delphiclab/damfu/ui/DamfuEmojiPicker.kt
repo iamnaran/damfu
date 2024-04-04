@@ -13,7 +13,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.delphiclab.damfu.ui.sticky.EmojiHStickyList
-import com.delphiclab.damfu.ui.sticky.EmojiMapCategoryList
+import com.delphiclab.damfu.ui.sticky.EmojiVStickyList
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -39,7 +39,7 @@ fun DamfuEmojiPicker(
         dragHandle = { BottomSheetDefaults.DragHandle() },
     ) {
 
-        EmojiHStickyList(emojisMapList)
+        EmojiVStickyList(emojisMapList)
     }
 }
 

@@ -23,7 +23,7 @@ fun EmojiCategoryPager(emojiByCategoryList: List<EmojiByCategory>) {
     val pagerState = rememberPagerState(pageCount = {
         emojiByCategoryList.size
     })
-    VerticalPager(state = pagerState) { index ->
+    HorizontalPager(state = pagerState) { index ->
         Column {
             Text(
                 text = emojiByCategoryList[index].categoryName,
